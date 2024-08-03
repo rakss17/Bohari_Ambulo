@@ -1,16 +1,19 @@
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
 import { Navbar } from "./components/navbar/Navbar";
-import { store } from "./lib/store";
-import { persistor } from "./lib/store";
+import { useSelector } from "react-redux";
+import { RootState } from "./lib/store";
 
 function App() {
+  const isDarkMode = useSelector(
+    (state: RootState) => state.statusInfo.is_dark_mode
+  );
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <Navbar />
-      </PersistGate>
-    </Provider>
+    <div
+      className={`w-full h-full ${
+        isDarkMode ? "bg-darkmode-bgcolor" : "bg-white"
+      }`}
+    >
+      <Navbar />
+    </div>
   );
 }
 
