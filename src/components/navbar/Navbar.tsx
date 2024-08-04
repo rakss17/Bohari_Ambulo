@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ThemedText } from "../themedtext/ThemedText";
 import { NavbarProps } from "./Navbar.types";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,13 +8,16 @@ import ToggleSwitch from "../toggleswitch/ToggleSwitch";
 
 export const Navbar: React.FC<NavbarProps> = ({}) => {
   const [activeButton, setActiveButton] = useState<string>("Home");
-  const [isEnabled, setIsEnabled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const dispatch = useDispatch();
   const isDarkMode = useSelector(
     (state: RootState) => state.statusInfo.is_dark_mode
   );
+  const [isEnabled, setIsEnabled] = useState<boolean>(isDarkMode);
+
   const handleButtonClick = (buttonName: string) => {
     setActiveButton(buttonName);
+    setIsMenuOpen(false);
   };
 
   const handleToggle = () => {
@@ -22,29 +25,58 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
     dispatch(setIsDarkMode(isEnabled));
   };
 
+  const handleResize = () => {
+    if (window.innerWidth >= 1024) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Check the size on component mount
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <>
-      <div className="bg-transparent w-screen h-navbar-custom flex flex-row items-center justify-between">
-        <div className="flex items-center">
-          <img
-            src={`${
-              isDarkMode
-                ? "../../src/assets/logo-white.png"
-                : "../../src/assets/logo-dark.png"
-            }`}
-            className="h-navbar-logo-sm-custom sm:h-navbar-logo-sm-custom md:h-navbar-logo-md-custom lg:h-navbar-logo-lg-custom xl:h-navbar-logo-lg-custom 2xl:h-navbar-logo-lg-custom"
-          />
-          <div
-            className={`w-1 h-navbar-horizontal-line-sm-custom sm:h-navbar-horizontal-line-sm-custom md:h-navbar-horizontal-line-md-custom lg:h-navbar-horizontal-line-lg-custom xl:h-navbar-horizontal-line-lg-custom 2xl:h-navbar-horizontal-line-lg-custom ${
-              isDarkMode ? "bg-white" : "bg-black"
-            }`}
-          />
-          <ThemedText
-            text="bohari.ambulo"
-            className="font-bold text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl ml-5"
-          />
-        </div>
-        <div className="flex items-center gap-10 mr-20">
+    <div className="bg-transparent w-full h-navbar-custom flex flex-row items-center justify-between p-5">
+      {isMenuOpen ? (
+        ""
+      ) : (
+        <>
+          <div className="flex items-center">
+            <img
+              src={`${
+                isDarkMode
+                  ? "../../src/assets/logo-white.png"
+                  : "../../src/assets/logo-dark.png"
+              }`}
+              className="h-navbar-logo-sm-custom sm:h-navbar-logo-sm-custom md:h-navbar-logo-md-custom lg:h-navbar-logo-lg-custom xl:h-navbar-logo-lg-custom 2xl:h-navbar-logo-lg-custom"
+            />
+            <div
+              className={`w-1 h-navbar-horizontal-line-sm-custom sm:h-navbar-horizontal-line-sm-custom md:h-navbar-horizontal-line-md-custom lg:h-navbar-horizontal-line-lg-custom xl:h-navbar-horizontal-line-lg-custom 2xl:h-navbar-horizontal-line-lg-custom ${
+                isDarkMode ? "bg-white" : "bg-black"
+              }`}
+            />
+            <ThemedText
+              text="bohari.ambulo"
+              className="font-bold text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl ml-5"
+            />
+          </div>
+        </>
+      )}
+
+      <div
+        className={`${
+          isMenuOpen
+            ? "flex w-full h-full"
+            : "hidden sm:hidden md:hidden lg:flex xl:flex 2xl:flex"
+        } flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row items-center gap-10`}
+      >
+        <div className="flex-row flex w-full justify-between">
+          <div className="block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
           <button
             className={`relative hover:border-b-2 hover:border-black focus:border-b-2 focus:border-black ${
               activeButton === "Home"
@@ -62,6 +94,23 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
               className="text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl hover:cursor-pointer"
             />
           </button>
+          <div
+            className={`${
+              isMenuOpen
+                ? "block sm:block md:block lg:hidden xl:hidden 2xl:hidden"
+                : "hidden"
+            }`}
+          >
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <ThemedText
+                text="✖"
+                className="text-2xl hover:cursor-pointer text-red-500"
+              />
+            </button>
+          </div>
+        </div>
+        <div className="flex-row flex w-full justify-between">
+          <div className="block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
           <button
             className={`relative hover:border-b-2 hover:border-black focus:border-b-2 focus:border-black ${
               activeButton === "About"
@@ -79,6 +128,11 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
               className="text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl hover:cursor-pointer"
             />
           </button>
+          <div className="w-navbar-dummy-width block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
+        </div>
+
+        <div className="flex-row flex w-full justify-between">
+          <div className="block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
           <button
             className={`relative hover:border-b-2 hover:border-black focus:border-b-2 focus:border-black ${
               activeButton === "Portfolio"
@@ -96,6 +150,10 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
               className="text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl hover:cursor-pointer"
             />
           </button>
+          <div className="w-navbar-dummy-width block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
+        </div>
+        <div className="flex-row flex w-full justify-between">
+          <div className="block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
           <button
             className={`relative hover:border-b-2 hover:border-black focus:border-b-2 focus:border-black ${
               activeButton === "Contact"
@@ -113,9 +171,25 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
               className="text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl hover:cursor-pointer"
             />
           </button>
-          <ToggleSwitch isDarkMode={isDarkMode} onToggle={handleToggle} />
+          <div className="w-navbar-dummy-width block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
+        </div>
+        <div className="flex-row flex w-full justify-between">
+          <div className="block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
+          <ToggleSwitch isDarkMode={isDarkMode} onToggle={handleToggle} />{" "}
+          <div className="w-navbar-dummy-width block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
         </div>
       </div>
-    </>
+      <div
+        className={`${
+          isMenuOpen
+            ? "hidden"
+            : "block sm:block md:block lg:hidden xl:hidden 2xl:hidden"
+        }`}
+      >
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <ThemedText text="☰" className="text-2xl hover:cursor-pointer" />
+        </button>
+      </div>
+    </div>
   );
 };
