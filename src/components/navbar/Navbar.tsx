@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
   }, []);
 
   return (
-    <div className="bg-transparent w-full h-navbar-custom flex flex-row items-center justify-between p-5">
+    <nav className="bg-transparent w-full h-navbar-custom flex flex-row items-center justify-between p-5">
       {isMenuOpen ? (
         ""
       ) : (
@@ -71,9 +71,11 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
       <div
         className={`${
           isMenuOpen
-            ? "flex w-full h-full"
+            ? "flex w-full h-full absolute top-5 right-5"
             : "hidden sm:hidden md:hidden lg:flex xl:flex 2xl:flex"
-        } flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row items-center gap-10`}
+        } ${
+          isDarkMode ? "bg-darkmode-bgcolor" : "bg-white"
+        } flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row items-center gap-10 z-10`}
       >
         <div className="flex-row flex w-full justify-between">
           <div className="block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
@@ -190,6 +192,6 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
           <ThemedText text="☰" className="text-2xl hover:cursor-pointer" />
         </button>
       </div>
-    </div>
+    </nav>
   );
 };

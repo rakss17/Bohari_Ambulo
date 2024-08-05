@@ -15,15 +15,23 @@ export default {
         "navbar-logo-lg-custom": "12vh",
         "navbar-logo-xl-custom": "14vh",
         "navbar-logo-2xl-custom": "16vh",
+        "home-my-image-xl-height-custom": "100%",
+        "home-my-image-md-height-custom": "80%",
+        "home-my-image-sm-height-custom": "80%",
+        "home-container-height-custom": "80%",
       },
       width: {
         "navbar-dummy-width": "5vw",
+        "home-my-image-xl-width-custom": "30%",
+        "home-my-image-md-width-custom": "50%",
+        "home-my-image-sm-width-custom": "80%",
       },
       backgroundColor: {
         "darkmode-bgcolor": "#121212",
+        "button-bg-custom": "#1774FF",
       },
       margin: {
-        "navbar-buttons-margin-top-custom": "25vh",
+        "navbar-buttons-margin-top-custom": "220%",
         "navbar-buttons-margin-left-custom": "33vw",
       },
       padding: {
@@ -50,13 +58,15 @@ export default {
         68: "20rem",
         70: "22rem",
         auto: "auto",
-        // percentages
         "1/2": "50%",
         "1/3": "33.333333%",
         "2/3": "66.666667%",
         "1/4": "25%",
         "3/4": "75%",
         full: "100%",
+      },
+      borderRadius: {
+        "home-my-image-radius-custom": "10%",
       },
     },
   },

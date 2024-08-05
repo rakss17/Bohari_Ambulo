@@ -1,6 +1,7 @@
 import { Navbar } from "./components/navbar/Navbar";
 import { useSelector } from "react-redux";
 import { RootState } from "./lib/store";
+import Home from "./pages/home/Home";
 
 function App() {
   const isDarkMode = useSelector(
@@ -8,11 +9,12 @@ function App() {
   );
   return (
     <div
-      className={`w-full h-full ${
+      className={`w-screen h-screen ${
         isDarkMode ? "bg-darkmode-bgcolor" : "bg-white"
       }`}
     >
       <Navbar />
+      <Home />
     </div>
   );
 }
