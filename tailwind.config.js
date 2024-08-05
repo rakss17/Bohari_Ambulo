@@ -29,10 +29,16 @@ export default {
       backgroundColor: {
         "darkmode-bgcolor": "#121212",
         "button-bg-custom": "#1774FF",
+        "techstack-bg-light-custom": "#A7A7A7",
+        "techstack-bg-dark-custom": "#646464",
+      },
+      colors: {
+        "custom-color": "#1774FF",
       },
       margin: {
         "navbar-buttons-margin-top-custom": "220%",
         "navbar-buttons-margin-left-custom": "33vw",
+        "about-margin-top-custom": "20vh",
       },
       padding: {
         "navbar-buttons-padding-top-custom": "7.5vh",
@@ -67,6 +73,9 @@ export default {
       },
       borderRadius: {
         "home-my-image-radius-custom": "10%",
+      },
+      boxShadow: {
+        "custom-shadow": "0 0 20px rgba(23, 116, 255, 0.5)",
       },
     },
   },
