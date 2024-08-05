@@ -7,9 +7,9 @@ export default function Home() {
     (state: RootState) => state.statusInfo.is_dark_mode
   );
   return (
-    <section className="bg-transparent h-home-container-height-custom flex flex-col sm:flex-col md:flex-col lg:flex-row lx:flex-row 2xl:flex-row items-center justify-around">
+    <section className="bg-transparent h-screen flex flex-col sm:flex-col md:flex-col lg:flex-row lx:flex-row 2xl:flex-row items-center justify-around">
       <div className="flex flex-col gap-5">
-        <div className="mt-10 sm:mt-10 md:mt-10 lg:mt-0 xl:mt-0 2xl:mt-0">
+        <div className="mt-20 sm:mt-20 md:mt-20 lg:mt-0 xl:mt-0 2xl:mt-0">
           <ThemedText
             text="BOHARI AMBULO"
             className="font-bold text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl"
@@ -78,7 +78,7 @@ export default function Home() {
 
       <img
         alt="My image"
-        src="../../src/assets/my-image.png"
+        src="../../src/assets/my-home-image.png"
         className="object-contain w-home-my-image-sm-width-custom h-home-my-image-sm-height-custom sm:w-home-my-image-sm-width-custom sm:h-home-my-image-sm-height-custom md:w-home-my-image-md-width-custom md:h-home-my-image-md-height-custom lg:w-home-my-image-xl-width-custom lg:h-home-my-image-xl-height-custom xl:w-home-my-image-xl-width-custom xl:h-home-my-image-xl-height-custom 2xl:w-home-my-image-xl-width-custom 2xl:h-home-my-image-xl-height-custom bg-transparent"
       />
     </section>
