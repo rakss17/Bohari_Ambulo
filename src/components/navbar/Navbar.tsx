@@ -6,7 +6,10 @@ import { RootState } from "../../lib/store";
 import { setIsDarkMode } from "../../lib/features/statusinfo/statusInfoSlices";
 import ToggleSwitch from "../toggleswitch/ToggleSwitch";
 
-export const Navbar: React.FC<NavbarProps> = ({}) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  onClickAbout,
+  onClickHome,
+}) => {
   const [activeButton, setActiveButton] = useState<string>("Home");
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const dispatch = useDispatch();
@@ -16,6 +19,12 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
   const [isEnabled, setIsEnabled] = useState<boolean>(isDarkMode);
 
   const handleButtonClick = (buttonName: string) => {
+    if (buttonName === "Home") {
+      onClickHome();
+    } else if (buttonName === "About") {
+      onClickAbout();
+    }
+
     setActiveButton(buttonName);
     setIsMenuOpen(false);
   };
@@ -33,7 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-    handleResize(); // Check the size on component mount
+    handleResize();
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -41,12 +50,16 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
   }, []);
 
   return (
-    <nav className="bg-transparent w-full h-navbar-custom flex flex-row items-center justify-between p-5">
+    <nav
+      className={`${
+        isDarkMode ? "bg-darkmode-bgcolor" : "bg-white"
+      } z-10 fixed w-full h-navbar-custom flex flex-row items-center justify-between p-5`}
+    >
       {isMenuOpen ? (
         ""
       ) : (
         <>
-          <div className="flex items-center">
+          <a href="/" className="flex items-center">
             <img
               src={`${
                 isDarkMode
@@ -64,14 +77,14 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
               text="bohari.ambulo"
               className="font-bold text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl ml-5"
             />
-          </div>
+          </a>
         </>
       )}
 
       <div
         className={`${
           isMenuOpen
-            ? "flex w-full h-full absolute top-5 right-5"
+            ? "flex w-screen h-screen absolute top-5 right-5"
             : "hidden sm:hidden md:hidden lg:flex xl:flex 2xl:flex"
         } ${
           isDarkMode ? "bg-darkmode-bgcolor" : "bg-white"

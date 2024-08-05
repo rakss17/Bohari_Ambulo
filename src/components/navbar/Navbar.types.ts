@@ -1,1 +1,4 @@
-export interface NavbarProps {}
+export interface NavbarProps {
+  onClickHome: () => void;
+  onClickAbout: () => void;
+}
