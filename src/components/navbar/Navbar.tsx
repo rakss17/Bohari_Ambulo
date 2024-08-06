@@ -93,14 +93,16 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex-row flex w-full justify-between">
           <div className="block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
           <button
-            className={`relative hover:border-b-2 hover:border-black focus:border-b-2 focus:border-black ${
+            className={`relative ${
               activeButton === "Home"
-                ? `${
-                    isDarkMode
-                      ? "border-b-2 border-white"
-                      : "border-b-2 border-black"
-                  }`
+                ? isDarkMode
+                  ? "border-b-2 border-white"
+                  : "border-b-2 border-black"
                 : ""
+            } hover:border-b-2 focus:border-b-2 ${
+              isDarkMode
+                ? "hover:border-white focus:border-white"
+                : "hover:border-black focus:border-black"
             }`}
             onClick={() => handleButtonClick("Home")}
           >
@@ -127,14 +129,16 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex-row flex w-full justify-between">
           <div className="block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
           <button
-            className={`relative hover:border-b-2 hover:border-black focus:border-b-2 focus:border-black ${
+            className={`relative ${
               activeButton === "About"
-                ? `${
-                    isDarkMode
-                      ? "border-b-2 border-white"
-                      : "border-b-2 border-black"
-                  }`
+                ? isDarkMode
+                  ? "border-b-2 border-white"
+                  : "border-b-2 border-black"
                 : ""
+            } hover:border-b-2 focus:border-b-2 ${
+              isDarkMode
+                ? "hover:border-white focus:border-white"
+                : "hover:border-black focus:border-black"
             }`}
             onClick={() => handleButtonClick("About")}
           >
@@ -149,14 +153,16 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex-row flex w-full justify-between">
           <div className="block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
           <button
-            className={`relative hover:border-b-2 hover:border-black focus:border-b-2 focus:border-black ${
+            className={`relative ${
               activeButton === "Portfolio"
-                ? `${
-                    isDarkMode
-                      ? "border-b-2 border-white"
-                      : "border-b-2 border-black"
-                  }`
+                ? isDarkMode
+                  ? "border-b-2 border-white"
+                  : "border-b-2 border-black"
                 : ""
+            } hover:border-b-2 focus:border-b-2 ${
+              isDarkMode
+                ? "hover:border-white focus:border-white"
+                : "hover:border-black focus:border-black"
             }`}
             onClick={() => handleButtonClick("Portfolio")}
           >
@@ -170,14 +176,16 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex-row flex w-full justify-between">
           <div className="block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
           <button
-            className={`relative hover:border-b-2 hover:border-black focus:border-b-2 focus:border-black ${
+            className={`relative ${
               activeButton === "Contact"
-                ? `${
-                    isDarkMode
-                      ? "border-b-2 border-white"
-                      : "border-b-2 border-black"
-                  }`
+                ? isDarkMode
+                  ? "border-b-2 border-white"
+                  : "border-b-2 border-black"
                 : ""
+            } hover:border-b-2 focus:border-b-2 ${
+              isDarkMode
+                ? "hover:border-white focus:border-white"
+                : "hover:border-black focus:border-black"
             }`}
             onClick={() => handleButtonClick("Contact")}
           >

@@ -97,7 +97,7 @@ export default function About() {
             isDarkMode
               ? "bg-techstack-bg-dark-custom"
               : "bg-techstack-bg-light-custom"
-          } flex flex-row flex-wrap max-w-lg rounded-lg`}
+          } flex flex-row flex-wrap max-w-lg rounded-lg justify-center items-center`}
         >
           <img src="../../src/assets/icons/html-icon.png" alt="html" />
           <img src="../../src/assets/icons/css-icon.png" alt="css" />

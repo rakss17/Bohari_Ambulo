@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div
-      className={`w-screen h-auto ${
+      className={`w-screen h-auto flex flex-col ${
         isDarkMode ? "bg-darkmode-bgcolor" : "bg-white"
       }`}
     >
