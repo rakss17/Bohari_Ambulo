@@ -17,7 +17,7 @@ export default function About() {
         <div className="max-w-xl mt-10 sm:mt-10 md:mt-10 lg:mt-0 xl:mt-0 2xl:mt-0 gap-5 flex flex-col px-10">
           <ThemedText
             text="Getting to know me"
-            className="font-bold text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-2xl"
+            className="font-bold text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl"
           />
 
           <ThemedText
@@ -35,7 +35,7 @@ export default function About() {
         <div className="flex flex-col">
           <ThemedText
             text="What I offer"
-            className="font-bold text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-2xl text-center"
+            className="font-bold text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl text-center"
           />
           <div className="mt-5 w-full gap-10 h-auto flex flex-col sm:flex-col md:flex-col lg:flex-row lx:flex-row 2xl:flex-row items-center justify-center">
             <div
@@ -84,7 +84,7 @@ export default function About() {
       <div className="gap-5 px-12 mt-about-margin-top-custom h-auto flex flex-col sm:flex-col md:flex-col lg:flex-row lx:flex-row 2xl:flex-row items-center justify-around">
         <div className="max-w-lg">
           <ThemedText
-            className="font-bold text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-2xl"
+            className="font-bold text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl"
             text="Tech Stack"
           />
           <ThemedText

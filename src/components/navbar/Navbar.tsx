@@ -9,6 +9,8 @@ import ToggleSwitch from "../toggleswitch/ToggleSwitch";
 export const Navbar: React.FC<NavbarProps> = ({
   onClickAbout,
   onClickHome,
+  onClickProjects,
+  focusedSection,
 }) => {
   const [activeButton, setActiveButton] = useState<string>("Home");
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -18,11 +20,23 @@ export const Navbar: React.FC<NavbarProps> = ({
   );
   const [isEnabled, setIsEnabled] = useState<boolean>(isDarkMode);
 
+  useEffect(() => {
+    if (focusedSection === "Home") {
+      setActiveButton("Home");
+    } else if (focusedSection === "About") {
+      setActiveButton("About");
+    } else if (focusedSection === "Projects") {
+      setActiveButton("Projects");
+    }
+  }, [focusedSection]);
+
   const handleButtonClick = (buttonName: string) => {
     if (buttonName === "Home") {
       onClickHome();
     } else if (buttonName === "About") {
       onClickAbout();
+    } else if (buttonName === "Projects") {
+      onClickProjects();
     }
 
     setActiveButton(buttonName);
@@ -154,7 +168,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="block sm:block md:block lg:hidden xl:hidden 2xl:hidden"></div>
           <button
             className={`relative ${
-              activeButton === "Portfolio"
+              activeButton === "Projects"
                 ? isDarkMode
                   ? "border-b-2 border-white"
                   : "border-b-2 border-black"
@@ -164,10 +178,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                 ? "hover:border-white focus:border-white"
                 : "hover:border-black focus:border-black"
             }`}
-            onClick={() => handleButtonClick("Portfolio")}
+            onClick={() => handleButtonClick("Projects")}
           >
             <ThemedText
-              text="Portfolio"
+              text="Projects"
               className="text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl hover:cursor-pointer"
             />
           </button>
