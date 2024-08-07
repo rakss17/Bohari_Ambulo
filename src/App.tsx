@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
 import { Navbar } from "./components/navbar/Navbar";
 import { useSelector } from "react-redux";
 import { RootState } from "./lib/store";
@@ -19,7 +20,7 @@ function App() {
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: [0.5, 0.9],
+      threshold: [0.2, 0.9],
     };
 
     const callback = (entries: IntersectionObserverEntry[]) => {
@@ -99,6 +100,16 @@ function App() {
         onClickAbout={scrollToAbout}
         onClickProjects={scrollToProject}
       />
+      {(focusedSection === "About" ||
+        focusedSection === "Projects" ||
+        focusedSection === "") && (
+        <button
+          className="fixed bottom-4 right-4 z-20 w-12 h-12 rounded-full flex items-center justify-center bg-blue-500 text-white"
+          onClick={scrollToHome}
+        >
+          <KeyboardArrowUpOutlinedIcon />
+        </button>
+      )}
       <div ref={homeRef}>
         <Home />
       </div>
