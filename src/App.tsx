@@ -6,6 +6,7 @@ import { RootState } from "./lib/store";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Projects from "./pages/projects/Projects";
+import Contact from "./pages/contact/Contact";
 
 function App() {
   const isDarkMode = useSelector(
@@ -15,6 +16,7 @@ function App() {
   const homeRef = useRef<HTMLDivElement | null>(null);
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
+  const contactRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const options = {
@@ -32,6 +34,8 @@ function App() {
             setFocusedSection("About");
           } else if (entry.target === projectsRef.current) {
             setFocusedSection("Projects");
+          } else if (entry.target === contactRef.current) {
+            setFocusedSection("Contact");
           }
         } else {
           if (entry.target === homeRef.current && focusedSection === "Home") {
@@ -46,6 +50,11 @@ function App() {
             focusedSection === "Projects"
           ) {
             setFocusedSection("");
+          } else if (
+            entry.target === contactRef.current &&
+            focusedSection === "Contact"
+          ) {
+            setFocusedSection("");
           }
         }
       });
@@ -56,11 +65,13 @@ function App() {
     if (homeRef.current) observer.observe(homeRef.current);
     if (aboutRef.current) observer.observe(aboutRef.current);
     if (projectsRef.current) observer.observe(projectsRef.current);
+    if (contactRef.current) observer.observe(contactRef.current);
 
     return () => {
       if (homeRef.current) observer.unobserve(homeRef.current);
       if (aboutRef.current) observer.unobserve(aboutRef.current);
       if (projectsRef.current) observer.unobserve(projectsRef.current);
+      if (contactRef.current) observer.unobserve(contactRef.current);
     };
   }, [focusedSection]);
 
@@ -88,6 +99,14 @@ function App() {
     }
   };
 
+  const scrollToContact = () => {
+    if (contactRef.current) {
+      setTimeout(() => {
+        contactRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  };
+
   return (
     <div
       className={`w-screen h-auto flex flex-col ${
@@ -99,17 +118,8 @@ function App() {
         onClickHome={scrollToHome}
         onClickAbout={scrollToAbout}
         onClickProjects={scrollToProject}
+        onClickContact={scrollToContact}
       />
-      {(focusedSection === "About" ||
-        focusedSection === "Projects" ||
-        focusedSection === "") && (
-        <button
-          className="fixed bottom-4 right-4 z-20 w-12 h-12 rounded-full flex items-center justify-center bg-blue-500 text-white"
-          onClick={scrollToHome}
-        >
-          <KeyboardArrowUpOutlinedIcon />
-        </button>
-      )}
       <div ref={homeRef}>
         <Home />
       </div>
@@ -119,6 +129,20 @@ function App() {
       <div ref={projectsRef}>
         <Projects />
       </div>
+      <div ref={contactRef}>
+        <Contact />
+      </div>
+      {(focusedSection === "About" ||
+        focusedSection === "Projects" ||
+        focusedSection === "Contact" ||
+        focusedSection === "") && (
+        <button
+          className="fixed bottom-4 right-4 z-20 w-12 h-12 rounded-full flex items-center justify-center bg-blue-500 text-white"
+          onClick={scrollToHome}
+        >
+          <KeyboardArrowUpOutlinedIcon />
+        </button>
+      )}
     </div>
   );
 }

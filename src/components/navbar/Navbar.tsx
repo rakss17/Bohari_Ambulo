@@ -10,6 +10,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onClickAbout,
   onClickHome,
   onClickProjects,
+  onClickContact,
   focusedSection,
 }) => {
   const [activeButton, setActiveButton] = useState<string>("Home");
@@ -27,6 +28,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       setActiveButton("About");
     } else if (focusedSection === "Projects") {
       setActiveButton("Projects");
+    } else if (focusedSection === "Contact") {
+      setActiveButton("Contact");
     }
   }, [focusedSection]);
 
@@ -37,6 +40,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       onClickAbout();
     } else if (buttonName === "Projects") {
       onClickProjects();
+    } else if (buttonName === "Contact") {
+      onClickContact();
     }
 
     setActiveButton(buttonName);

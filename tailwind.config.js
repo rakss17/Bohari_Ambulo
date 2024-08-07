@@ -23,6 +23,7 @@ export default {
         "projects-card-height-sm-custom": "50vh",
         "projects-card-height-md-custom": "50vh",
         "projects-card-height-lg-custom": "50vh",
+        "contact-input-height-custom": "30vh",
       },
       width: {
         "navbar-dummy-width": "5vw",
@@ -33,6 +34,8 @@ export default {
         "projects-card-width-sm-custom": "75vw",
         "projects-card-width-md-custom": "60vw",
         "projects-card-width-lg-custom": "30vw",
+        "contact-input-width-sm-custom": "85vw",
+        "contact-input-width-lg-custom": "25vw",
       },
       backgroundColor: {
         "darkmode-bgcolor": "#121212",
