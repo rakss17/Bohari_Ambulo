@@ -4,4 +4,7 @@ export interface CardProps {
   project_name: string;
   position: string;
   description: string;
+  backend_link?: string;
+  frontend_link?: string;
+  apkfile_link?: string;
 }

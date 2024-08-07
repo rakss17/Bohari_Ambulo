@@ -19,6 +19,9 @@ export default function Projects() {
               project_name={project.projectName}
               position={project.position}
               description={project.description}
+              backend_link={project.backEndLink}
+              frontend_link={project.frontEndLink}
+              apkfile_link={project.apkFileLink}
             />
           ))}
         </div>
