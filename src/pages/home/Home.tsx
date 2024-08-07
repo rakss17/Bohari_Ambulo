@@ -25,7 +25,7 @@ export default function Home() {
         </div>
         <div className="flex flex-row items-center gap-2">
           <a
-            href="/src/assets/docs/Resume.pdf"
+            href="/assets/docs/Resume.pdf"
             className="bg-button-bg-custom text-white p-3 rounded-lg"
             download
           >
@@ -39,8 +39,8 @@ export default function Home() {
             <img
               src={`${
                 isDarkMode
-                  ? "../../src/assets/icons/github-icon-light.png"
-                  : "../../src/assets/icons/github-icon-dark.png"
+                  ? "/assets/icons/github-icon-light.png"
+                  : "/assets/icons/github-icon-dark.png"
               }`}
               alt="GitHub"
             />
@@ -53,8 +53,8 @@ export default function Home() {
             <img
               src={`${
                 isDarkMode
-                  ? "../../src/assets/icons/linkedin-icon-light.png"
-                  : "../../src/assets/icons/linkedin-icon-dark.png"
+                  ? "/assets/icons/linkedin-icon-light.png"
+                  : "/assets/icons/linkedin-icon-dark.png"
               }`}
               alt="LinkedIn"
             />
@@ -67,8 +67,8 @@ export default function Home() {
             <img
               src={`${
                 isDarkMode
-                  ? "../../src/assets/icons/facebook-icon-light.png"
-                  : "../../src/assets/icons/facebook-icon-dark.png"
+                  ? "/assets/icons/facebook-icon-light.png"
+                  : "/assets/icons/facebook-icon-dark.png"
               }`}
               alt="Facebook"
             />
@@ -78,7 +78,7 @@ export default function Home() {
 
       <img
         alt="My image"
-        src="../../src/assets/my-home-image.png"
+        src="/assets/my-home-image.png"
         className="object-contain w-home-my-image-sm-width-custom h-home-my-image-sm-height-custom sm:w-home-my-image-sm-width-custom sm:h-home-my-image-sm-height-custom md:w-home-my-image-md-width-custom md:h-home-my-image-md-height-custom lg:w-home-my-image-xl-width-custom lg:h-home-my-image-xl-height-custom xl:w-home-my-image-xl-width-custom xl:h-home-my-image-xl-height-custom 2xl:w-home-my-image-xl-width-custom 2xl:h-home-my-image-xl-height-custom bg-transparent"
       />
     </section>

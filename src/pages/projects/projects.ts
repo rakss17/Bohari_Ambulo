@@ -1,6 +1,6 @@
 export const projects = [
   {
-    imageSource: "../../src/assets/projects/images/vehisched.png",
+    imageSource: "/assets/projects/images/vehisched.png",
     imageAlt: "vehisched",
     projectName: "Vehi-Sched",
     position: "Full Stack Developer",
@@ -12,7 +12,7 @@ export const projects = [
       "https://github.com/rakss17/vehisched-mobileapp/releases/tag/v1.0.0",
   },
   {
-    imageSource: "../../src/assets/projects/images/hanapbhouse.png",
+    imageSource: "/assets/projects/images/hanapbhouse.png",
     imageAlt: "hanapbhouse",
     projectName: "HanapBhouse",
     position: "Full Stack Developer",
@@ -20,7 +20,7 @@ export const projects = [
       "A full stack mobile app for boarding house listing and browsing.",
   },
   {
-    imageSource: "../../src/assets/projects/images/itrack.png",
+    imageSource: "/assets/projects/images/itrack.png",
     imageAlt: "itrack",
     projectName: "iTrack",
     position: "Front-end Developer",

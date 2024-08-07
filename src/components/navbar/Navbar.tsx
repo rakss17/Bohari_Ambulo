@@ -81,9 +81,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <a href="/" className="flex items-center">
             <img
               src={`${
-                isDarkMode
-                  ? "../../src/assets/logo-white.png"
-                  : "../../src/assets/logo-dark.png"
+                isDarkMode ? "/assets/logo-white.png" : "/assets/logo-dark.png"
               }`}
               className="h-navbar-logo-sm-custom sm:h-navbar-logo-sm-custom md:h-navbar-logo-md-custom lg:h-navbar-logo-lg-custom xl:h-navbar-logo-lg-custom 2xl:h-navbar-logo-lg-custom"
             />

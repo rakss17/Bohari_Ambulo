@@ -11,7 +11,7 @@ export default function About() {
       <div className="bg-transparent h-auto flex flex-col sm:flex-col md:flex-col lg:flex-row lx:flex-row 2xl:flex-row items-center justify-center gap-10">
         <img
           alt="My image"
-          src="../../src/assets/my-image.png"
+          src="/assets/my-image.png"
           className="object-contain w-home-my-image-sm-width-custom h-home-my-image-sm-height-custom sm:w-home-my-image-sm-width-custom sm:h-home-my-image-sm-height-custom md:w-home-my-image-md-width-custom md:h-home-my-image-md-height-custom lg:w-home-my-image-xl-width-custom lg:h-home-my-image-xl-height-custom xl:w-home-my-image-xl-width-custom xl:h-home-my-image-xl-height-custom 2xl:w-home-my-image-xl-width-custom 2xl:h-home-my-image-xl-height-custom bg-transparent"
         />
         <div className="max-w-xl mt-10 sm:mt-10 md:mt-10 lg:mt-0 xl:mt-0 2xl:mt-0 gap-5 flex flex-col px-10">
@@ -99,25 +99,19 @@ export default function About() {
               : "bg-techstack-bg-light-custom"
           } flex flex-row flex-wrap max-w-lg rounded-lg justify-center items-center`}
         >
-          <img src="../../src/assets/icons/html-icon.png" alt="html" />
-          <img src="../../src/assets/icons/css-icon.png" alt="css" />
-          <img
-            src="../../src/assets/icons/javascript-icon.png"
-            alt="javascript"
-          />
-          <img
-            src="../../src/assets/icons/typescript-icon.png"
-            alt="typescript"
-          />
-          <img src="../../src/assets/icons/react-icon.png" alt="react" />
-          <img src="../../src/assets/icons/python-icon.png" alt="python" />
-          <img src="../../src/assets/icons/django-icon.png" alt="django" />
-          <img src="../../src/assets/icons/postman-icon.png" alt="postman" />
-          <img src="../../src/assets/icons/redis-icon.png" alt="redis" />
-          <img src="../../src/assets/icons/docker-icon.png" alt="docker" />
-          <img src="../../src/assets/icons/git-icon.png" alt="git" />
-          <img src="../../src/assets/icons/github-icon.png" alt="github" />
-          <img src="../../src/assets/icons/vite-icon.png" alt="vite" />
+          <img src="/assets/icons/html-icon.png" alt="html" />
+          <img src="/assets/icons/css-icon.png" alt="css" />
+          <img src="/assets/icons/javascript-icon.png" alt="javascript" />
+          <img src="/assets/icons/typescript-icon.png" alt="typescript" />
+          <img src="/assets/icons/react-icon.png" alt="react" />
+          <img src="/assets/icons/python-icon.png" alt="python" />
+          <img src="/assets/icons/django-icon.png" alt="django" />
+          <img src="/assets/icons/postman-icon.png" alt="postman" />
+          <img src="/assets/icons/redis-icon.png" alt="redis" />
+          <img src="/assets/icons/docker-icon.png" alt="docker" />
+          <img src="/assets/icons/git-icon.png" alt="git" />
+          <img src="/assets/icons/github-icon.png" alt="github" />
+          <img src="/assets/icons/vite-icon.png" alt="vite" />
         </div>
       </div>
     </section>
