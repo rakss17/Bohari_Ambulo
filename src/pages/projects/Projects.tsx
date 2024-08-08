@@ -1,3 +1,4 @@
+import React from "react";
 import { projects } from "./projects";
 import Card from "../../components/card/Card";
 import { ThemedText } from "../../components/themedtext/ThemedText";

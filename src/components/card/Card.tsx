@@ -82,31 +82,40 @@ const Card: React.FC<CardProps> = ({
                     text="Back-end API documentation:"
                     className="mt-5"
                   />
-                  <button className="bg-button-bg-custom text-white p-3 rounded-lg hover:bg-white hover:text-black border-2 border-custom-color">
-                    <a href={backend_link} target="_blank">
-                      Visit site <LoginIcon />
-                    </a>
-                  </button>
+
+                  <a
+                    className="bg-button-bg-custom text-white p-3 rounded-lg hover:bg-white hover:text-black border-2 border-custom-color"
+                    href={backend_link}
+                    target="_blank"
+                  >
+                    Visit site <LoginIcon />
+                  </a>
                 </>
               )}
               {frontend_link && (
                 <>
                   <ThemedText text="Web App Front-end:" className="mt-5" />
-                  <button className="bg-button-bg-custom text-white p-3 rounded-lg hover:bg-white hover:text-black border-2 border-custom-color">
-                    <a href={frontend_link} target="_blank">
-                      Visit site <LoginIcon />
-                    </a>
-                  </button>
+
+                  <a
+                    className="bg-button-bg-custom text-white p-3 rounded-lg hover:bg-white hover:text-black border-2 border-custom-color"
+                    href={frontend_link}
+                    target="_blank"
+                  >
+                    Visit site <LoginIcon />
+                  </a>
                 </>
               )}
               {apkfile_link && (
                 <>
                   <ThemedText text="Mobile App apk file:" className="mt-5" />
-                  <button className="bg-button-bg-custom text-white p-3 rounded-lg hover:bg-white hover:text-black border-2 border-custom-color">
-                    <a href={apkfile_link} target="_blank">
-                      Download apk <FileDownloadOutlinedIcon />
-                    </a>
-                  </button>
+
+                  <a
+                    className="bg-button-bg-custom text-white p-3 rounded-lg hover:bg-white hover:text-black border-2 border-custom-color"
+                    href={apkfile_link}
+                    target="_blank"
+                  >
+                    Download apk <FileDownloadOutlinedIcon />
+                  </a>
                 </>
               )}
             </>
