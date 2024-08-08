@@ -69,10 +69,7 @@ const Card: React.FC<CardProps> = ({
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <ThemedText
-            text={`${project_name} link(s):`}
-            className="font-bold "
-          />
+          <ThemedText text={`${project_name} link(s):`} className="font-bold" />
 
           {backend_link || frontend_link || apkfile_link ? (
             <>
@@ -82,39 +79,39 @@ const Card: React.FC<CardProps> = ({
                     text="Back-end API documentation:"
                     className="mt-5"
                   />
-
                   <a
-                    className="bg-button-bg-custom text-white p-3 rounded-lg hover:bg-white hover:text-black border-2 border-custom-color"
+                    className="bg-button-bg-custom text-white p-3 rounded-lg hover:bg-white hover:text-black border-2 border-custom-color mt-3 flex items-center justify-center"
                     href={backend_link}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Visit site <LoginIcon />
+                    Visit site <LoginIcon className="ml-2" />
                   </a>
                 </>
               )}
               {frontend_link && (
                 <>
                   <ThemedText text="Web App Front-end:" className="mt-5" />
-
                   <a
-                    className="bg-button-bg-custom text-white p-3 rounded-lg hover:bg-white hover:text-black border-2 border-custom-color"
+                    className="bg-button-bg-custom text-white p-3 rounded-lg hover:bg-white hover:text-black border-2 border-custom-color mt-3 flex items-center justify-center"
                     href={frontend_link}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Visit site <LoginIcon />
+                    Visit site <LoginIcon className="ml-2" />
                   </a>
                 </>
               )}
               {apkfile_link && (
                 <>
                   <ThemedText text="Mobile App apk file:" className="mt-5" />
-
                   <a
-                    className="bg-button-bg-custom text-white p-3 rounded-lg hover:bg-white hover:text-black border-2 border-custom-color"
+                    className="bg-button-bg-custom text-white p-3 rounded-lg hover:bg-white hover:text-black border-2 border-custom-color mt-3 flex items-center justify-center"
                     href={apkfile_link}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Download apk <FileDownloadOutlinedIcon />
+                    Download apk <FileDownloadOutlinedIcon className="ml-2" />
                   </a>
                 </>
               )}
