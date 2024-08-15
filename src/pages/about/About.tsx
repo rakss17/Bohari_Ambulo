@@ -103,6 +103,7 @@ export default function About() {
           <img src="/assets/icons/css-icon.png" alt="css" />
           <img src="/assets/icons/javascript-icon.png" alt="javascript" />
           <img src="/assets/icons/typescript-icon.png" alt="typescript" />
+          <img src="/assets/icons/tailwind-icon.png" alt="tailwind" />
           <img src="/assets/icons/react-icon.png" alt="react" />
           <img src="/assets/icons/python-icon.png" alt="python" />
           <img src="/assets/icons/django-icon.png" alt="django" />
