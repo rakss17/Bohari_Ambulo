@@ -1,6 +1,7 @@
 import { ThemedText } from "../../components/themedtext/ThemedText";
 import { useSelector } from "react-redux";
 import { RootState } from "../../lib/store";
+import { TechStack } from "./tech-stack";
 
 export default function About() {
   const isDarkMode = useSelector(
@@ -99,20 +100,9 @@ export default function About() {
               : "bg-techstack-bg-light-custom"
           } flex flex-row flex-wrap max-w-lg rounded-lg justify-center items-center`}
         >
-          <img src="/assets/icons/html-icon.png" alt="html" />
-          <img src="/assets/icons/css-icon.png" alt="css" />
-          <img src="/assets/icons/javascript-icon.png" alt="javascript" />
-          <img src="/assets/icons/typescript-icon.png" alt="typescript" />
-          <img src="/assets/icons/tailwind-icon.png" alt="tailwind" />
-          <img src="/assets/icons/react-icon.png" alt="react" />
-          <img src="/assets/icons/python-icon.png" alt="python" />
-          <img src="/assets/icons/django-icon.png" alt="django" />
-          <img src="/assets/icons/postman-icon.png" alt="postman" />
-          <img src="/assets/icons/redis-icon.png" alt="redis" />
-          <img src="/assets/icons/docker-icon.png" alt="docker" />
-          <img src="/assets/icons/git-icon.png" alt="git" />
-          <img src="/assets/icons/github-icon.png" alt="github" />
-          <img src="/assets/icons/vite-icon.png" alt="vite" />
+          {TechStack.map((techstack) => (
+            <img src={techstack.src} alt={techstack.alt} />
+          ))}
         </div>
       </div>
     </section>
